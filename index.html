@@ -1,40 +1,356 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<img
+					src="https://stream-blog-v2.imgix.net/blog/wp-content/uploads/f9547f9b9ba2dfa409118a00d2b7691d/Angular.png?auto=format&auto=compress&w=800&fit=max"
+					alt="angular">
+			</section>
+			<section>
+				<h2 style="font-size: 40px;">1. Introduction to Angular</h2>
+				<p style="font-size: 35px; border-bottom: 1px solid white;"> Key Features</p>
+				<ul style="list-style: none; text-align: center; font-size: 35px;">
+					<li style="text-align: start; margin-top: 15px;">
+						🗸 Component-based architecture
+					</li>
+					<li style="text-align: start;">
+						🗸 Two-way data binding
+					</li>
+					<li style="text-align: start;">
+						🗸 Integration with RxJS (reactive programming)
+					</li>
+					<li style="text-align: start;">
+						🗸 Built-in Dependency Injection
+					</li>
+					<li style="text-align: start;">
+						🗸 PWA (Progressive Web App) support
+					</li>
+					<li style="text-align: start;">
+						🗸 Modular architecture.
+					</li>
+				</ul>
+
+			</section>
+			<section>
+				<section>
+					<h2 style="">2. Angular Architecture</h2>
+					<p style="font-size: 50px;"> Core Building Blocks</p>
+				</section>
+				<!-- <ul -->
+				<!-- style="list-style: none; text-align: center; font-size: 30px; display: flex; flex-direction: column; gap: 20px; margin: 0;"> -->
+				<section>
+					<!-- <li style="text-align: start; font-size: 20px;"> -->
+					1. Modules (NgModule) – organize the application into functional blocks.
+					<code>
+							<pre style="margin: 0;">
+		<span style="color: rgb(155, 173, 81);">@NgModule</span>({
+			<span style="color: rgb(199, 125, 187);">declarations</span>: [AppComponent],
+			<span style="color: rgb(199, 125, 187);">imports</span>: [BrowserModule],
+			<span style="color: rgb(199, 125, 187);">bootstrap</span>: [AppComponent]
+		})
+		<span style="color: rgb(207, 142, 109);">export class</span> <span style="color: rgb(0, 140, 255);">AppModule</span> {}
+							</pre>
+					</code>
+
+				</section>
+
+				<section>
+					2. Components – manage data display.
+					<code>
+							<pre style="margin: 0;">
+		<span style="color: rgb(155, 173, 81);">@Component</span>({
+			<span style="color: rgb(199, 125, 187);">selector</span>: <span style="color: rgb(145, 208, 98);">'app-root'</span>,
+			<span style="color: rgb(199, 125, 187);">template</span>: <span style="color: rgb(145, 208, 98);">`&lt;h1>Hello, {{ name }}!&lt;/h1>`</span>
+		})
+		<span style="color: rgb(207, 142, 109);">export class</span> <span style="color: rgb(0, 140, 255);">AppComponent </span> {
+			name <span style="color: rgb(207, 142, 109);">=</span> <span style="color: rgb(145, 208, 98);">'Angular'</span>;
+		}
+							</pre>
+					</code>
+				</section>
+				<section>
+
+					3. Services – contain business logic.
+					<code>
+							<pre style="margin: 0;">
+		<span style="color: rgb(155, 173, 81);">@Injectable</span>()
+		<span style="color: rgb(207, 142, 109);">export class</span> <span style="color: rgb(0, 140, 255);">DataService</span> {
+			<span style="color: rgb(0, 140, 255);">getData</span>() {<span style="color: rgb(207, 142, 109);"> return</span> [<span style="color: rgb(145, 208, 98);">'A'</span>,<span style="color: rgb(145, 208, 98);">'B'</span>,<span style="color: rgb(145, 208, 98);">'C'</span>]; }
+		}
+							</pre>
+					</code>
+				</section>
+				<section>
+
+					4. Directives – modify the DOM (e.g., *ngFor, *ngIf).
+
+				</section>
+				<section>
+					5. Routing (Router) – navigation between pages.
+				</section>
+
+			</section>
+			<section>
+				<h2 style="font-size: 35px;">3. Data Binding</h2>
+				<p style="font-size: 30px;border-bottom: 1px solid white;"> Angular supports 4 types of data binding:</p>
+				<table style="width: 100%; font-size: 20px; border: 1px solid #595959; height: auto;">
+					<tr>
+						<th style="border: 1px solid #595959; border-bottom: 1px solid white;">Type</th>
+						<th style="border: 1px solid #595959; border-bottom: 1px solid white;">Syntax</th>
+						<th style="border: 1px solid #595959; border-bottom: 1px solid white;">Example</th>
+					</tr>
+					<tr>
+						<td style="border: 1px solid #595959;">Interpolation</td>
+						<td style="border: 1px solid #595959;">{{ value }}</td>
+						<td style="border: 1px solid #595959;">{{ title }}</td>
+					</tr>
+					<tr>
+						<td style="border: 1px solid #595959;">Property Binding </td>
+						<td style="border: 1px solid #595959;">[property]="value"</td>
+						<td style="border: 1px solid #595959;">&lt;img [src]="imageUrl"></td>
+					</tr>
+					<tr>
+						<td style="border: 1px solid #595959;">Event Binding</td>
+						<td style="border: 1px solid #595959;">(event)="handler()"</td>
+						<td style="border: 1px solid #595959;">&lt;button (click)="submit()"></td>
+					</tr>
+					<tr>
+						<td style="border: 1px solid #595959;">Two-Way Binding </td>
+						<td style="border: 1px solid #595959;">[(ngModel)]="property"</td>
+						<td style="border: 1px solid #595959;">&lt;input [(ngModel)]="name"></td>
+					</tr>
+				</table>
+			</section>
+
+			<section>
+				<section>
+					<h2>4. HTTP Requests (Angular HttpClient)</h2>
+
+				</section>
+				<section>
+					<p style="font-size: 30px; border-bottom: 1px solid white;">GET Request Example</p>
+					<code style="font-size: 25px;">
+						<pre style="margin: 0;">
+	<span style="color: rgb(155, 173, 81);">@Injectable</span>()
+	<span style="color: rgb(207, 142, 109);">export class</span><span style="color: rgb(0, 140, 255);"> ApiService </span>{
+		<span style="color: rgb(152, 47, 194);">constructor</span>(<span style="color: rgb(207, 142, 109);">private</span> http: HttpClient) {}
+	
+		<span style="color: rgb(0, 140, 255);">getUsers</span>() {
+			<span style="color: rgb(207, 142, 109);"> return this</span>.http.<span style="color: rgb(152, 47, 194);">get</span>(<span style="color: rgb(145, 208, 98);">'https://api.example.com/users'</span>); 
+		}
+	}
+						</pre>
+				</code>
+
+				</section>
+				<section>
+					<p style="font-size: 30px; border-bottom: 1px solid white;">Usage in a Component</p>
+
+					<code style="font-size: 25px;">
+						<pre style="margin: 0;">
+	<span style="color: rgb(155, 173, 81);">@Component</span>({<span style="color: rgb(207, 142, 109);">...</span>})
+	<span style="color: rgb(207, 142, 109);">export class</span><span style="color: rgb(0, 140, 255);"> UserListComponent </span>{
+		users: <span style="color: rgb(152, 47, 194);">any</span>[] <span style="color: rgb(207, 142, 109);">=</span> [];
+		<span style="color: rgb(152, 47, 194);">constructor</span>(<span style="color: rgb(207, 142, 109);">private</span> api: ApiService) {}
+	
+		<span style="color: rgb(0, 140, 255);">ngOnInit</span>() {
+			<span style="color: rgb(207, 142, 109);"> this</span>.api.<span style="color: rgb(152, 47, 194);">getUsers</span>().<span style="color: rgb(152, 47, 194);">subscribe</span>(data <span style="color: rgb(207, 142, 109);">=></span><span style="color: rgb(207, 142, 109);"> this</span>.users = data); 
+		}
+	}
+						</pre>
+				</code>
+
+				</section>
+
+
+			</section>
+
+			<section>
+				<section>
+
+					<h2>5. Routing</h2>
+				</section>
+				<section>
+					<p style="font-size: 30px; border-bottom: 1px solid white;">Route Configuration</p>
+					<code style="font-size: 25px;">
+						<pre style="margin: 0;">
+	<span style="color: rgb(207, 142, 109);">const</span> routes<span style="color: rgb(207, 142, 109);">:</span> Routes <span style="color: rgb(207, 142, 109);">=</span> [
+		{ path<span style="color: rgb(207, 142, 109);">:</span> <span style="color: rgb(145, 208, 98);">''</span>, component<span style="color: rgb(207, 142, 109);">:</span> HomeComponent },
+		{ path<span style="color: rgb(207, 142, 109);">:</span> <span style="color: rgb(145, 208, 98);">'about'</span>, component<span style="color: rgb(207, 142, 109);">:</span> AboutComponent },
+		{ path<span style="color: rgb(207, 142, 109);">:</span> <span style="color: rgb(145, 208, 98);">'contact'</span>, component<span style="color: rgb(207, 142, 109);">:</span> ContactComponent }
+	];
+	
+	<span style="color: rgb(155, 173, 81);">@NgModule</span>({
+		imports<span style="color: rgb(207, 142, 109);">:</span> [RouterModule.<span style="color: rgb(152, 47, 194);">forRoot</span>(routes)],
+		exports<span style="color: rgb(207, 142, 109);">:</span> [RouterModule]
+	})
+	<span style="color: rgb(207, 142, 109);">export class</span><span style="color: rgb(0, 140, 255);"> AppRoutingModule</span> {}
+						</pre>
+				</code>
+
+				</section>
+				<section>
+					<p style="font-size: 30px; border-bottom: 1px solid white;">Template Navigation</p>
+
+					<code style="font-size: 25px;">
+						<pre style="margin: 0;">
+	<span style="color: rgb(102, 191, 156);">&lt;nav></span>
+		<span style="color: rgb(102, 191, 156);">&lt;a <span style="color: rgb(230, 211, 111);">routerLink</span>="<span style="color: rgb(145, 208, 98);">/</span>"></span>Home<span style="color: rgb(102, 191, 156);">&lt;/a></span>
+		<span style="color: rgb(102, 191, 156);">&lt;a <span style="color: rgb(230, 211, 111);">routerLink</span>="<span style="color: rgb(145, 208, 98);">/about</span>"></span>About<span style="color: rgb(102, 191, 156);">&lt;/a></span>
+	<span style="color: rgb(102, 191, 156);">&lt;/nav>
+	&lt;router-outlet>&lt;/router-outlet></span>
+						</pre>
+				</code>
+
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2 ">6. Angular Directives</h2>
+					<p style=" font-size: 50px; ">Built-in Directives. Core Building Blocks</p>
+
+				</section>
+				<section>
+					1. *ngIf – conditional rendering
+					<code>
+					<pre style=" margin: 0;">
+						<span style="color: rgb(102, 191, 156);">&lt;div</span><span style="color: rgb(230, 211, 111);">
+							*ngIf</span><span style="color: rgb(102, 191, 156);">="</span><span
+							style="color: rgb(145, 208, 98);">isLoggedIn</span><span
+							style="color: rgb(102, 191, 156);">"></span>Welcome!<span
+							style="color: rgb(102, 191, 156);">&lt;/div></span>
+						</pre>
+						</code>
+
+				</section>
+
+				<section>
+					2. *ngFor – loop through an array
+					<code>
+							<pre style="margin: 0;">
+	<span style="color: rgb(102, 191, 156);">&lt;ul></span>
+		<span style="color: rgb(102, 191, 156);">&lt;li</span> <span style="color: rgb(230, 211, 111);">*ngFor</span>="<span style="color: rgb(145, 208, 98);">let item of items</span><span style="color: rgb(102, 191, 156);">"></span>{{ item }}<span style="color: rgb(102, 191, 156);">&lt;/li></span>
+	<span style="color: rgb(102, 191, 156);">&lt;/ul></span>
+							</pre>
+					</code>
+
+				</section>
+				<section>
+					3. [ngClass] / [ngStyle] – dynamic styling
+					<code>
+							<pre style="margin: 0;">
+	<span style="color: rgb(102, 191, 156);">&lt;div</span> <span style="color: rgb(230, 211, 111);">[ngClass]</span><span style="color: rgb(102, 191, 156);">="</span><span style="color: rgb(145, 208, 98);">{ 'active': isActive }</span><span style="color: rgb(102, 191, 156);">">&lt;/div></span>
+							</pre>
+					</code>
+
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+
+					<h2>7. Forms in Angular</h2>
+				</section>
+				<section>
+					<p style="font-size: 30px; border-bottom: 1px solid white;">Reactive Forms</p>
+					<code style="font-size: 30px;">
+						<pre style="margin: 0;">
+	<span style="color: rgb(155, 173, 81);">@Component</span>({<span style="color: rgb(207, 142, 109);">...</span>})
+	<span style="color: rgb(207, 142, 109);">export class</span><span style="color: rgb(0, 140, 255);"> LoginFormComponent </span>{
+		form <span style="color: rgb(207, 142, 109);">= new</span><span style="color: rgb(0, 140, 255);"> FormGroup</span>({
+			email<span style="color: rgb(207, 142, 109);">: new</span><span style="color: rgb(0, 140, 255);"> FormControl</span>(<span style="color: rgb(145, 208, 98);">''</span>, [Validators.required, Validators.email]),
+			password<span style="color: rgb(207, 142, 109);">: new</span><span style="color: rgb(0, 140, 255);"> FormControl</span>(<span style="color: rgb(145, 208, 98);">''</span>, [Validators.<span style="color: rgb(152, 47, 194);">minLength</span>(<span style="color: rgb(230, 211, 111);">6</span>)])
+		});
+	
+	
+		<span style="color: rgb(0, 140, 255);">onSubmit</span>() {
+			<span style="color: rgb(152, 47, 194);">console.log</span>(<span style="color: rgb(207, 142, 109);">this</span>.form.value);
+		}
+	}
+						</pre>
+				</code>
+
+				</section>
+
+				<section>
+					<p style="font-size: 30px; border-bottom: 1px solid white;">Form Template</p>
+					<code style="font-size: 30px;">
+						<pre style="margin: 0;">
+	<span style="color: rgb(102, 191, 156);">&lt;form <span style="color: rgb(230, 211, 111);">[formGroup]</span>="<span style="color: rgb(145, 208, 98);">form</span>"<span style="color: rgb(230, 211, 111);"> (ngSubmit)</span>="<span style="color: rgb(145, 208, 98);">onSubmit()</span>"></span>
+		<span style="color: rgb(102, 191, 156);">&lt;input <span style="color: rgb(230, 211, 111);">formControlName</span>="<span style="color: rgb(145, 208, 98);">email</span>"<span style="color: rgb(230, 211, 111);"> placeholder</span>="<span style="color: rgb(145, 208, 98);">Email</span>"></span>
+		<span style="color: rgb(102, 191, 156);">&lt;input <span style="color: rgb(230, 211, 111);">formControlName</span>="<span style="color: rgb(145, 208, 98);">password</span><span style="color: rgb(230, 211, 111);"> type</span>="<span style="color: rgb(145, 208, 98);">password</span>"></span>
+		<span style="color: rgb(102, 191, 156);">&lt;button <span style="color: rgb(230, 211, 111);">type</span>="<span style="color: rgb(145, 208, 98);">submit</span>"></span>Login<span style="color: rgb(102, 191, 156);">&lt;/button></span>
+	<span style="color: rgb(102, 191, 156);">&lt;/form>
+						</pre>
+				</code>
+
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h2>8. Conclusion</h2>
+
+				</section>
+				<section>
+					<p style=" font-size: 30px; border-bottom: 1px solid white;">Why Choose Angular?</p>
+					<ul style="list-style: none; font-size: 30px; display: flex; flex-direction: column; gap: 20px; margin: 0;">
+						<li>✔ Full-fledged framework (no need to choose routing, HTTP, etc. separately)</li>
+						<li>✔ TypeScript = strong typing + better IDE support</li>
+						<li>✔ PWA & SSR (Angular Universal) support</li>
+						<li>✔ Large community & backed by Google</li>
+					</ul>
+
+				</section>
+				<section>
+
+					<p style="font-size: 30px; border-bottom: 1px solid white; margin-top: 50px;">When to Use Angular?</p>
+					<ul style="list-style: none; font-size: 30px; display: flex; flex-direction: column; gap: 20px; margin: 0;">
+						<li>1. Enterprise applications</li>
+						<li>2. Complex SPAs with multiple components</li>
+						<li>3. Projects requiring structure and scalability</li>
+					</ul>
+				</section>
+
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
